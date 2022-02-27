@@ -1,6 +1,7 @@
 import { Navigate, useRoutes } from "react-router-dom";
 import AboutUs from "./components/AboutUs";
 import NavBarLayout from "./components/layouts";
+import NotFound from "./components/NotFound";
 
 const Router = () => {
 	return useRoutes([
@@ -23,7 +24,7 @@ const Router = () => {
 			path: "/",
 			element: <NavBarLayout />,
 			children: [
-				{ path: "404", element: <>Page Not Found</> },
+				{ path: "404", element: <NotFound /> },
 				{ path: "*", element: <Navigate to="/404" /> },
 			],
 		},

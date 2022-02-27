@@ -11,16 +11,18 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 // import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+import { useNavigate } from "react-router-dom";
 
 const items = {
 	Industries: [],
 	Services: [],
-	Company: ["About", "Careers", "Blog", "Contact Us", "Privacy Policy"],
+	Company: ["about-us", "careers", "blog", "contact-us", "privacy-policy"],
 };
 // const pages = ["Industries", "Services", "Company"];
 // const settings = ["About", "Careers", "Blog", "Contact Us", "Privacy Policy"];
 
 const NavBar = () => {
+	const naviagte = useNavigate();
 	const [anchorElNav, setAnchorElNav] = React.useState(null);
 	const [anchorElUser, setAnchorElUser] = React.useState(null);
 	const [menuItem, setMenuItem] = React.useState([]);
@@ -102,7 +104,8 @@ const NavBar = () => {
 								<Button
 									key={page}
 									onClick={() => handleOpenUserMenu(page)}
-									sx={{ my: 2, color: "black", display: "block" }}>
+									sx={{ my: 2, color: "black", display: "block" }}
+									disabled={items[page].length > 0 ? false : true}>
 									{page}
 								</Button>
 								<Menu
@@ -123,10 +126,11 @@ const NavBar = () => {
 									{menuItem.length > 0
 										? menuItem.map((setting, indexs) => (
 												<MenuItem key={setting} onClick={handleCloseUserMenu}>
-													<Typography textAlign="center" key={indexs}>
+													{/* <Button style={{ color: "black" }} onClick={<Navigate to={setting} />}> */}
+													<Typography textAlign="center" key={indexs} onClick={() => naviagte(`/${setting}`)}>
 														{setting}
-														{/* {console.log(setting)} */}
 													</Typography>
+													{/* </Button> */}
 												</MenuItem>
 										  ))
 										: null}
