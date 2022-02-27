@@ -1,6 +1,7 @@
 import { Box, Divider, Grid, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
 	// outerDiv: {
@@ -28,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 const Footer = () => {
 	const classes = useStyles();
+	const navigate = useNavigate();
 	return (
 		<>
 			<Box className={classes.outerDiv} p={3}>
@@ -67,7 +69,9 @@ const Footer = () => {
 					<Grid item xs={10} md={4}>
 						<Box textAlign={{ xs: "left", md: "center" }} m={{ xs: 3 }}>
 							<Typography variant="h6">Company</Typography>
-							<Typography className={classes.child}>About US</Typography>
+							<Typography className={classes.child} onClick={() => navigate("/about-us")}>
+								About US
+							</Typography>
 							<Typography className={classes.child}>Careers</Typography>
 							<Typography className={classes.child}>Blog</Typography>
 							<Typography className={classes.child}>Contact Us</Typography>

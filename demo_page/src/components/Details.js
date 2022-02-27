@@ -35,7 +35,7 @@ const Details = () => (
 			{/* <Box flexDirection={"row"} m={6}> */}
 			<Grid item xs={12} md={6}>
 				<Box flexGrow={1} maxWidth={"100%"} textAlign={"center"}>
-					<Typography variant="h4" mb={3}>
+					<Typography variant="h4" mb={3} mt={3}>
 						Left Section
 					</Typography>
 					<Typography variant="subtitle1" style={{ color: "grey", fontSize: "17px" }}>
