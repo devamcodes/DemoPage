@@ -128,7 +128,7 @@ const NavBar = () => {
 												<MenuItem key={setting} onClick={handleCloseUserMenu}>
 													{/* <Button style={{ color: "black" }} onClick={<Navigate to={setting} />}> */}
 													<Typography textAlign="center" key={indexs} onClick={() => naviagte(`/${setting}`)}>
-														{setting}
+														{setting.toUpperCase()}
 													</Typography>
 													{/* </Button> */}
 												</MenuItem>
